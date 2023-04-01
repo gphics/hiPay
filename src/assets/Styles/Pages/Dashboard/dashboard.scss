@@ -1,0 +1,93 @@
+@use "../../Utils/flex_display" as flex_control;
+@use "../../Utils/bg_color.scss" as bg;
+@import "../../Components/Others/main_nav_component";
+
+// holder class for all dashboard page
+.dashboard_holder_class{
+@include flex_control.flex_row{
+    justify-content: space-between;
+    width:100vw;
+    height: 100vh;
+    overflow: hidden
+}
+};
+.dashboard_page{
+    height: 100%;
+    flex: 1 1 auto;
+    width:30%;
+}
+.dashboard_header{
+    background-color: bg.$primary_color;
+    border-radius: 10px;
+    height:30%;
+    margin: 2%;
+    width:95%;
+    flex: 1 1 auto;
+        overflow: hidden;
+    @include flex_control.flex_column{
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    // account info
+    .acc_info{
+        margin-left:3%;
+        .control_bal_visible{
+            fill:bg.$secondary_color;
+            cursor: pointer;
+            transform: scale(2);
+            margin: 5%;;
+            &:hover{
+                fill:bg.$neutral_color;
+            }
+        }
+    }
+}
+.dashboard_actions{
+    height:30%;
+    width: 95%;
+    
+    margin: 2%;
+  
+    flex: 1 1 auto;
+    @include flex_control.flex_row{
+        justify-content: space-around;
+    };
+
+    // styling each actions
+    .each_action{
+        overflow: hidden;
+        width:40%;
+        height: 90%;
+        border-radius: 10px;
+        margin:auto 0;
+        background-color: bg.$secondary_color;
+        text-decoration: none;
+        text-transform: capitalize;
+        font-family: semibold_font;
+        color: bg.$primary_color;
+        @include flex_control.flex_column{
+          align-items: center;
+          justify-content: center;
+        }
+        .icon{
+            transform: scale(3);
+            margin-bottom:10%;
+            fill: bg.$primary_color;
+        }
+        // action hover
+        &:hover{
+            background-color: bg.$primary_color;
+            color:bg.$secondary_color;
+            transform: scale(1.03);
+            .icon{
+    fill: bg.$secondary_color
+            }
+        
+        }
+        // media query
+        @media (max-width:700px){
+            width:47%
+        }
+    }
+}

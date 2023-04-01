@@ -1,0 +1,102 @@
+@use "../../Utils/bg_color.scss" as bg;
+@use "../../Utils/flex_display.scss" as flex_control;
+
+.transaction_page {
+    flex: 1 1 auto;
+    width: 70%;
+    height: 100%;
+    overflow-y: scroll;
+
+    .transaction_holder {
+        width: 100%;
+
+        // height: 700px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        @include flex_control.flex_column;
+
+        .heading {
+            width: 100%;
+            margin: 5px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+    }
+}
+
+.each_transaction {
+    height: 250px;
+    margin: 10px;
+    width: 90%;
+
+    @include flex_control.flex_column {
+        justify-content: space-between;
+    }
+
+    ;
+    overflow: hidden;
+
+    background-color: #EFEFEF;
+    padding-left: 5px;
+    border-radius: 5px;
+
+    .sender {
+        height: 20%;
+
+        h4 {
+            text-transform: capitalize;
+            font-size: 1em;
+        }
+
+        ;
+
+        h5 {
+            text-transform: capitalize;
+            // font-size: 1em;
+        }
+    }
+
+    .receiver {
+        height: 20%;
+
+        h4 {
+            text-transform: capitalize;
+            font-size: 1em;
+        }
+
+        ;
+
+        h5 {
+            text-transform: capitalize;
+            // font-size: 1em;
+        }
+    }
+
+    .last {
+        height: 40%;
+
+        h4 {
+            text-transform: capitalize;
+            font-size: 1em;
+        }
+
+        ;
+
+        p {
+            width: 100%;
+            height: 50%;
+            overflow-y: scroll
+        }
+
+        ;
+
+        h3 {
+            color: bg.$primary_color
+        }
+    }
+
+    @media (max-width:700px) {
+
+        height: 300px;
+    }
+}

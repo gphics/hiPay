@@ -1,0 +1,64 @@
+@use "./bg_color" as bg;
+@use "./flex_display" as flex_control;
+
+// loading component holder
+.loading_component_holder {
+  width: 100vw;
+  height: 100vh;
+  background-color: bg.$bg_overlay;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  @include flex_control.flex_row {
+    justify-content: center;
+    align-items: center;
+  }
+// section encapsulating the loader
+  & section {
+    width: 6%;
+    height: 10%;
+    @include flex_control.flex_row{
+    flex-flow: row wrap;
+    justify-content: space-between;
+    };
+
+    @media (max-width:700px){
+      width:10%;
+    }
+   
+    max-width: 60px;
+    // styling the loader
+    & .loader {
+      width: 45%;
+      height: 45%;
+      animation-name: loader;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+    // giving loader random colors
+    $loader_bg_list: (
+      (1, bg.$primary_color),
+      (2, bg.$secondary_color),
+      (3, bg.$secondary_color),
+      (4, bg.$primary_color)
+    );
+
+    
+    @each $num, $color in $loader_bg_list {
+      .loader:nth-child(#{$num}) {
+        background-color: #{$color};
+        animation-delay: $num * 0.2s
+      }
+    }
+
+    // loader animation
+    @keyframes loader {
+        75%{
+        opacity: 0; 
+        }
+        
+    }
+  }
+}

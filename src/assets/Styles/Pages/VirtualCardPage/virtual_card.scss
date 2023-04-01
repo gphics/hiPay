@@ -1,0 +1,60 @@
+@use "../../Utils/bg_color.scss" as bg;
+@use "../../Utils/flex_display.scss" as flex_control;
+
+
+.virtual_card_page{
+   
+    flex: 1 1 auto;
+    @include flex_control.flex_column{
+        align-items: center;
+        justify-content: center;
+    };
+    main{
+        width:60%;
+        height: 40%;
+        color: bg.$primary_color;
+        background-color: bg.$primary_color;
+        border-radius: 10px;
+        // box-shadow: 1px 1px 5px #afabab,
+        // -1px -1px 5px #f1e7e7;
+        @include flex_control.flex_column{
+            justify-content: space-between
+        };
+        @media (max-width:700px){
+            width:90%
+        };
+        .icon_holder{
+            width:100%;
+            padding-right: 5px;
+            height: 30%;
+                    border-radius: 10px 10px 0 0;
+            background-color: bg.$neutral_color;
+            @include flex_control.flex_row{
+                justify-content: end
+            }
+            img{
+        width:30px
+    }
+        };
+        .main_info{
+                width: 100%;
+            height: 70%;
+         
+            @include flex_control.flex_column {
+                    justify-content: end;
+       
+                };
+           h6{
+            color: bg.$secondary_color;
+            margin:1px 0 2px 5px;
+            span{
+                color: bg.$secondary_color;
+            }
+           } 
+        }
+        &:hover{
+            transform: scale(1.04)
+        }
+    };
+    
+}

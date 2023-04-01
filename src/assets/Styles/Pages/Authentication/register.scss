@@ -1,0 +1,21 @@
+// importing flex_control
+@use "../../Utils/flex_display.scss" as flex_control;
+
+// importing bg
+@use "../../Utils/bg_color.scss";
+// importing reg form css
+@import "../../Components/Authentication/reg_form_component.scss";
+// importing reg hero css
+@import "../../Components/Authentication/reg_hero_component.scss";
+
+
+.register_page{
+ 
+    width:100vw;
+    margin-top: 2vh;
+    height: 90vh;
+    overflow: hidden;
+    @include flex_control.flex_row{
+        justify-content: space-between;
+    }
+}

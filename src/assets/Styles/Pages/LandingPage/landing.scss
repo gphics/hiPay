@@ -1,0 +1,223 @@
+// importing dependecies
+@use "../../Utils/bg_color" as bg;
+@use "../../Utils/flex_display" as flex_control;
+@use "../../Utils/link_style" as link_style;
+
+// Main Landing Selector
+.main_landing_page {
+    margin-top: 3vh;
+    width: 100vw;
+}
+
+// section styling mixin
+@mixin section_style {
+    width: 100%;
+    margin: 20px 0;
+    height: 400px;
+    @include flex_control.flex_row;
+    justify-content: center;
+
+    // media query for first section
+    @media (max-width:700px) {
+        flex-direction: column;
+        align-items: center;
+        height: 500px;
+    }
+
+    @content;
+}
+
+;
+
+// image style mixin
+@mixin img_style {
+    width: 47%;
+    border-radius: 10px;
+    height: 96%;
+    margin: 1% 3% 1% 0;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+
+    ;
+
+    // media query for image
+    @media (max-width:700px) {
+        width: 90%;
+        height: 48%;
+    }
+
+    @content;
+}
+
+;
+
+// article mixin
+@mixin article_style {
+    width: 47%;
+    margin: 0 1% 2%;
+    height: 100%;
+
+    @include flex_control.flex_column {
+        align-items: center;
+        justify-content: center;
+    }
+
+    // media query for article
+    @media (max-width:700px) {
+        width: 90%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 0 0 2%;
+        height: 48%;
+
+    }
+
+    @content;
+}
+
+@mixin acc_create_style {
+    @include link_style.link;
+    display: block;
+    margin: 10px 0 5px 0;
+    width: 65%;
+
+    // media query for link
+    @media (min-width:700px) {
+        width: 55%
+    }
+
+    ;
+    @content;
+}
+
+// first section
+.first_part_landing_page {
+    // styling first section
+    @include section_style();
+
+    // text content
+    article {
+        // article styling
+        @include article_style();
+
+        h2 {
+            font-family: bold_font;
+            text-transform: capitalize;
+            margin-bottom: 5px;
+            width: 95%;
+
+            span {
+                display: block;
+                color: bg.$primary_color;
+            }
+
+            ;
+        }
+
+        ;
+
+        p {
+            width: 95%;
+
+            li {
+                text-transform: capitalize;
+                list-style-type: square
+            }
+        }
+
+
+        .acc_create_link {
+            @include acc_create_style;
+        }
+
+
+    }
+
+    // styling image
+    img {
+        @include img_style()
+    }
+
+    ;
+
+
+}
+
+// second section
+.second_part_landing_page {
+    @include section_style;
+
+    // img styling
+    img {
+        @include img_style {
+            @media (max-width:700px) {
+                height: 70%;
+
+            }
+        }
+    }
+
+    // styling the article
+    article {
+        @include article_style() {
+            @media (max-width:700px) {
+                height: 25%;
+                margin-bottom: 5%;
+            }
+
+            ;
+        }
+
+        ;
+
+        h3 {
+            font-family: bold_font;
+            text-transform: capitalize;
+            width: 90%;
+            margin-bottom: 2%;
+            color: bg.$primary_color;
+        }
+
+        p {
+            width: 90%;
+            text-transform: capitalize;
+        }
+    }
+}
+
+
+// last section
+.third_part_landing_page {
+    width: 100vw;
+    margin-top: 5px;
+    height: 150px;
+    // background-color: red;
+    padding: 5px;
+
+    @include flex_control.flex_column {
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        text-transform: capitalize;
+        text-align: center;
+        width: 90%;
+        color:bg.$primary_color
+    }
+
+    .acc_create_link {
+        @include acc_create_style {
+            width: 50%;
+            margin: 3px 0 0 0 ;
+            
+            @media (min-width:700px) {
+                width: 25%
+            }
+
+            ;
+        }
+    }
+}

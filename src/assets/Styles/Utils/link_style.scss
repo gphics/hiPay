@@ -1,0 +1,21 @@
+@use "./bg_color" as bg;
+
+@mixin link{
+    text-decoration: none;
+        font-family: bold_font;
+        color: bg.$neutral_color;
+        background-color: bg.$secondary_color;
+        text-align: center;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-transform: capitalize;
+        border: 0;
+        outline: none;
+        &:hover {
+            background-color: bg.$primary_color;
+            color: bg.$secondary_color;
+            transform: scale(1.01)
+            
+        }
+    @content;
+}

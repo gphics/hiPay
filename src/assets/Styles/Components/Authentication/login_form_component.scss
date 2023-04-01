@@ -1,0 +1,76 @@
+// importing flex_control
+@use "../../Utils/flex_display.scss" as flex_control;
+// importing bg color
+@use "../../Utils/bg_color.scss" as bg;
+// importing button stle
+@use "../../Utils/link_style.scss" as link_style;
+
+.login_form{
+    width:48%;
+    height: 100%;
+    
+    background-color: bg.$secondary_color;
+    flex:1 1 auto;
+    @include flex_control.flex_column{
+        justify-content: center;
+        align-items: center;
+    };
+
+    .login_form_header{
+        width:80%;
+        height: 7%;
+      
+        h3{
+            color: bg.$neutral_color;
+            text-align: center;
+            text-transform: capitalize;
+        }
+    }
+
+    // form input
+    .main_login_form{
+        width: 80%;
+        height: 40%;
+
+        @include flex_control.flex_column {
+            justify-content: center;
+            align-items: center
+              
+         }
+          .login_input{
+            margin:1%;
+            height: 40%;
+            width:95%;
+           } ;
+    }
+
+    .login_form_footer{
+        width: 80%;
+        height: 10%;
+        margin-top: 1%;
+
+        @include flex_control.flex_column {
+                justify-content: center;
+                align-items: center;
+            }
+        button{
+            @include link_style.link;
+                width: 95%;
+            color: bg.$primary_color;
+            background-color: bg.$neutral_color;
+        };
+        small{
+            height:20%;
+            margin-top: 2%;
+                width: 95%;
+                text-align: center;
+            color: bg.$neutral_color;
+            a{
+                color:bg.$primary_color;
+                text-decoration: none;
+            }
+
+        }
+            ;
+    }
+}

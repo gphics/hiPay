@@ -1,0 +1,31 @@
+@use "../../Utils/bg_color.scss" as bg;
+// importing flex_control
+@use "../../Utils/flex_display.scss" as flex_control;
+// importing input component style
+
+
+.reg_hero_component {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+@include flex_control.flex_column {
+        justify-content: center;
+        align-items: center
+    }
+    
+  img {
+        width: 96%;
+        margin: 0 auto; 
+ 
+    }
+    ;
+
+   @media (max-width:850px){
+    display: none;
+   }
+
+
+}
+
+
+

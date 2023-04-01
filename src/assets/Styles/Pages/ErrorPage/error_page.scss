@@ -1,0 +1,30 @@
+// importing flex_control
+@use "../../Utils/flex_display" as flex_control;
+@use "../../Utils//bg_color" as bg;
+@use "../../Utils/link_style" as link_style;
+
+// error page style
+.error_page {
+
+    width: 100vw;
+    height: 100vh;
+
+    @include flex_control.flex_column {
+        justify-content: center;
+        align-items: center
+    }
+
+    ;
+
+    & img {
+        width: 80%;
+        height: 60%;
+        flex: 0 1 auto;
+        margin-bottom: 10px;
+    }
+}
+
+
+.back_home{
+    @include link_style.link
+}

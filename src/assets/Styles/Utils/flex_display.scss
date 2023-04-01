@@ -1,0 +1,12 @@
+// flex display mixin
+// row
+@mixin flex_row{
+    display: flex;
+    @content;
+}
+// column
+@mixin flex_column{
+    display: flex;
+    flex-direction: column;
+    @content;
+}

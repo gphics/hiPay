@@ -1,0 +1,91 @@
+@use "../../Utils/flex_display.scss" as flex_control;
+@use "../../Utils/bg_color.scss" as bg;
+
+.update_profile_page {
+    height: 100%;
+    flex: 1 1 auto;
+    background-color: bg.$secondary_color;
+
+    @include flex_control.flex_column {
+        justify-content: center;
+        align-items: center
+    }
+
+    ;
+
+    h2 {
+        color: bg.$neutral_color;
+        text-transform: capitalize;
+        width: 100%;
+        text-align: center;
+        height: 5%;
+
+        margin-bottom: 5px;
+    }
+
+}
+
+// main form
+.update_profile_form {
+    width: 100%;
+
+    height: 60%;
+
+    @include flex_control.flex_column {
+        justify-content: center;
+        align-items: center
+    }
+
+    ;
+
+    @media (max-width:700px) {
+        height: 80%;
+
+        .update_input {
+            width: 90%;
+            margin: 1% 0;
+            height: 25%;
+        }
+
+    }
+
+    ;
+
+    .update_one,
+    .update_two {
+        width: 100%;
+        height: 85%;
+
+        @include flex_control.flex_column {
+            justify-content: center;
+            align-items: center
+        }
+
+        ;
+
+    }
+
+    .btn_holder {
+        width: 100%;
+        height: 13%;
+    
+
+        @include flex_control.flex_row {
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            width: 30%;
+            margin-right: 3%;
+            cursor: pointer;
+            font-family: bold_font;
+            text-transform: capitalize;
+            background-color: bg.$primary_color;
+            border-radius: 5px;
+            border: none;
+            color: bg.$neutral_color;
+            height: 70%
+        }
+    }
+}

@@ -1,0 +1,129 @@
+// importing bg color
+@use "../../Utils/bg_color.scss" as bg;
+// importing flex-control
+@use "../../Utils/flex_display" as flex_control;
+
+.slide_down_nav {
+    @include flex_control.flex_column;
+    width: 100vw;
+    height: 8vh;
+    @media (min-width:700px) {
+        flex-direction: row;
+    }
+}
+
+// always visible part 
+.slide_down_visible {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    // background-color: red;
+    @include flex_control.flex_row {
+        justify-content: space-between;
+        padding: 5px 5%;
+    }
+
+    ;
+
+    // styling the logo
+    & .logo {
+        height: 75%;
+    }
+
+    // styling the bar icon
+    .slide_down_bar {
+        transform: scale(2.3);
+        height: 70%;
+        cursor: pointer;
+        fill: bg.$secondary_color;
+
+        &:hover {
+            fill: bg.$primary_color
+        }
+
+        @media (min-width:700px) {
+            display: none;
+        }
+    }
+
+    ;
+
+    @media (min-width:700px) {
+        width: 20%;
+        padding: 10px 0 0 10px
+    }
+}
+
+//  show on click
+.slide_down_link_holder {
+    width: 100vw;
+    height: 25vh;
+    padding: 10px 0;
+    top: 8vh;
+    background-color: bg.$secondary_color;
+    position: fixed;
+    box-shadow: 1px 1px 5px rgb(112, 111, 111);
+    @include flex_control.flex_column;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width:700px) {
+        box-shadow: none;
+        position: initial;
+        top: 0;
+        left: 0;
+        flex-direction: row;
+        height: 100%;
+        width: 80%;
+        padding: 0 10%;
+        background-color: transparent;
+    }
+}
+
+// hiding the nav
+.hide_slide {
+    opacity: 0;
+    transform: translateX(-100vw) ;
+
+    @media (min-width:700px) {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+// link
+.slide_down_link {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: bold_font;
+    color: bg.$neutral_color;
+
+    &:hover {
+        color: bg.$primary_color
+    }
+
+    ;
+
+    @media (min-width:700px) {
+        color: bg.$secondary_color;
+
+        &:hover {
+            color: bg.$primary_color
+        }
+
+        ;
+    }
+}
+
+// active link
+.slide_down_active_link {
+    color: bg.$neutral_color;
+
+    @media (min-width:700px) {
+        background-color: bg.$primary_color;
+        padding:5px 10px
+    ;&:hover {
+        color: bg.$secondary_color
+    }
+    }
+}

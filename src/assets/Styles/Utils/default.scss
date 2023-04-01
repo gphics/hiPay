@@ -1,0 +1,23 @@
+// importing bg_color
+@use "../Utils/bg_color" as bg;
+// Importing all font
+@import "./all_font";
+// importing loading component 
+@import "./loading_component";
+// importing notification component
+@import "./notification_component";
+
+
+// setting default style
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: medium_font;
+  transition: all .6s;
+  color:bg.$secondary_color;
+}
+
+body{
+    overflow-x: hidden;
+}

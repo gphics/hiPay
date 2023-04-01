@@ -1,0 +1,15 @@
+// importing login hero component
+@use "../../Components/Authentication/login_hero_component.scss";
+// importing login form component
+@use "../../Components/Authentication/login_form_component.scss";
+// importing flex control
+@use "../../Utils/flex_display.scss" as flex_control;
+
+.login_page{
+    width:100vw;
+    height:92vh;
+    overflow: hidden;
+    @include flex_control.flex_row{
+        justify-content: space-between
+    };
+}

@@ -1,0 +1,7 @@
+
+@mixin animation_setter($name, $duration, $iteration_count, $timing_function){
+    animation-name: #{$name};
+    animation-duration: #{$duration};
+    animation-timing-function: #{$timing_function};
+    animation-iteration-count: $iteration_count;
+}

@@ -1,0 +1,67 @@
+@use "../../Utils/bg_color.scss" as bg;
+// importing flex_control
+@use "../../Utils/flex_display.scss" as flex_control;
+
+.single_input_holder{
+    width:70%;
+
+    height: 19%;
+    overflow: hidden;
+    @include flex_control.flex_column{
+        justify-content: space-between
+    };
+label {
+    text-transform: capitalize;
+    font-family: bold_font;
+    height: 35%;
+    color:bg.$neutral_color;
+    width: 98%;
+    padding-left: 5px;
+}
+    section{
+        height: 60%;
+        margin: 2px;
+        width:98%;
+
+        flex: 1 1 auto;
+        border-radius: 5px;
+        padding:5px;
+        border: 2px solid bg.$primary_color;;
+        @include flex_control.flex_row;
+        // styling input box
+        input {
+            font-size: 1.1em;;
+                background-color: transparent;
+                outline: none;
+                width: 85%;
+                height: 100%;
+                color: bg.$neutral_color;
+                flex: 1 1 auto;
+                padding-left: 5px;
+                border: 0;
+            &[type="email"]:invalid {
+                color: red;
+            }
+            }
+                               
+            // styling icon
+            .input_icon{
+                cursor: pointer;
+                fill:bg.$primary_color;
+                height: 100%;
+                width:9%;
+               
+                
+            }
+            // styling section hover
+        &:hover{
+            border-color: bg.$neutral_color;
+            transform: scale(1.01);
+            .input_icon {
+                fill: bg.$neutral_color
+            }
+        }
+    }
+    
+    
+}

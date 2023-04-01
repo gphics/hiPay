@@ -1,0 +1,109 @@
+// importing bg style
+@use "../../Utils/bg_color.scss" as bg;
+// importing flex_control
+@use "../../Utils/flex_display.scss" as flex_control;
+// importing reg input
+@use "../Others/Input_component.scss";
+// iporting link style
+@use "../../Utils/link_style.scss" as link_style;
+
+.reg_form_component {
+    height: 100%;
+    width: 49%;
+    margin-left: 1%;
+    flex: 1 1 auto;
+
+    @include flex_control.flex_column {
+        justify-content: center;
+        align-items: center
+    }
+
+    ;
+    background-color: bg.$secondary_color;
+
+    @media (max-width:800px) {
+        margin: 0;
+
+    }
+}
+
+// header
+.reg_form_header {
+    height: 8%;
+    width: 100%;
+    margin-bottom: 2%;
+
+    h4 {
+        text-align: center;
+        text-transform: capitalize;
+        color: bg.$neutral_color;
+        width: 100%;
+        padding-top: 5px;
+    }
+}
+
+// main form
+.reg_forms {
+    width: 100%;
+    height: 75%;
+   
+    @include flex_control.flex_column {
+        justify-content: space-between;
+        align-items: center
+    }
+
+    ;
+}
+
+// footer
+.reg_form_footer {
+    height: 13%;
+    margin-top: 2%;
+
+    width: 100%;
+
+    @include flex_control.flex_column {
+        align-items: center
+    }
+
+    ;
+
+    ;
+
+    button {
+        @include link_style.link;
+        outline: none;
+        border: 0;
+        text-align: center;
+        // padding-top: 5px;
+        // padding-bottom: 5px;
+        margin-top: 2px;
+        background-color: bg.$neutral_color;
+        color: bg.$secondary_color;
+        width: 70%;
+        font-family: bold_font
+    }
+
+    ;
+
+    small {
+        width: 70%;
+        color: bg.$neutral_color;
+        height: 20%;
+        text-align: center;
+
+        a {
+            color: bg.$primary_color;
+            text-decoration: none;
+        }
+    }
+
+    @media (max-width:330px) {
+        height: 9%;
+        ;
+
+        small {
+            display: none;
+        }
+    }
+}
