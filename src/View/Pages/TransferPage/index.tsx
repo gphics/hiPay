@@ -76,7 +76,10 @@ function TransferPage() {
 
     async function submitHandler(e:any) {
         e.preventDefault()
-
+        if(!user.isActive){
+            showNotification("your account is currently deactivated")
+            return;
+        }
         if (!transaction.accountName) {
             showNotification("receipient account does not exist")
             return

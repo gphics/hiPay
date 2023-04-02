@@ -38,6 +38,8 @@
         text-align: center;
         color: bg.$neutral_color;
         height: 40%;
+        padding-top:6px;
+
     }
 
     .actions {
@@ -153,7 +155,8 @@
         background-color: bg.$secondary_color;
         height: 30%;
         text-align: center;
-        width: 35%
+        width: 35%;
+        text-transform: capitalize;
     }
 
     .update_link {
@@ -192,10 +195,11 @@
         h3{
             width:70%;
             height: 40%;
+            padding-top: 6px;
         }
         .update_link{
             width:65%;
-            height: 55%;
+            height:45%;
         }
     }
 }
