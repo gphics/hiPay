@@ -20,14 +20,7 @@ function TransactionPage() {
             {/* @ts-ignore */}
             {transactionList && transactionList.map((item, i) => {
                  return <EachTransaction {...item} key={i *77} />
-            })}
-
-                {/* @ts-ignore */}
-            {transactionList && transactionList.map((item, i) => {
-                 return <EachTransaction {...item} key={i *77} />
-            })}
-
-            
+            })}            
       </section>
   </div>;
 }
@@ -74,6 +67,7 @@ function EachTransaction({ sender, receiver, remarks, amount, created_at }) {
           {/* @ts-ignore */}
           <h5>fullname: {info.length > 0 && info[1].fullname} </h5>
           <h5>account Number: {receiver} </h5>
+          <h6>Date: {new Date(created_at).toDateString()} </h6>
         </div>
         <div className="last">
           <h4>Info</h4>
